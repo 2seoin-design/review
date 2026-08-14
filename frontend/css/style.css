@@ -313,25 +313,57 @@ section h2 {
   transform: translateY(0);
 }
 
-/* ===== Breakpoints ===== */
-@media (min-width: 640px) {
-  .hero-copy h1 { font-size: 42px; }
-  .steps { grid-template-columns: repeat(3, 1fr); }
-  .feature-grid { grid-template-columns: repeat(3, 1fr); }
-}
+/* ===== Breakpoints =====
+   Base styles above are tuned for mobile (~375px).
+   Tablet: >=768px / Desktop: >=1440px
+*/
+@media (min-width: 768px) {
+  .wrap { padding: 0 32px; }
 
-@media (min-width: 900px) {
-  .hero { padding: 88px 0 100px; }
+  .header-inner { height: 72px; }
+  .logo { font-size: 22px; }
+
+  .hero { padding: 72px 0 84px; }
   .hero-inner {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 48px;
+    gap: 32px;
   }
   .hero-copy { flex: 1; }
-  .hero-art { flex: 0 0 380px; max-width: 380px; margin: 0; }
-  .hero-copy h1 { font-size: 48px; }
-  .hero-sub { font-size: 17px; }
-  section h2 { font-size: 32px; }
-  .final-cta h2 { font-size: 34px; }
+  .hero-copy h1 { font-size: 40px; }
+  .hero-sub { font-size: 16.5px; }
+  .hero-art { flex: 0 0 260px; max-width: 260px; margin: 0; }
+
+  main section { padding: 80px 0; }
+  section h2 { font-size: 30px; }
+
+  .chat-stack { max-width: 460px; }
+
+  .steps { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .feature-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+  .final-cta h2 { font-size: 32px; }
+}
+
+@media (min-width: 1440px) {
+  .wrap { max-width: 1240px; padding: 0 40px; }
+
+  .hero { padding: 120px 0 140px; }
+  .hero-inner { gap: 72px; }
+  .hero-copy h1 { font-size: 56px; }
+  .hero-sub { font-size: 18px; max-width: 50ch; }
+  .hero-art { flex: 0 0 440px; max-width: 440px; }
+
+  main section { padding: 100px 0; }
+  section h2 { font-size: 36px; }
+
+  .chat-stack { max-width: 520px; }
+
+  .steps { gap: 28px; }
+  .step { padding: 34px 30px; }
+  .feature-grid { gap: 24px; }
+  .feature-card { padding: 32px 28px; }
+
+  .final-cta h2 { font-size: 40px; }
 }
