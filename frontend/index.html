@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matchip — 각자 콕 찍으면, 겹치는 곳으로 떠나요</title>
+<meta name="description" content="시간 맞추기 어려운 친구들이 각자 편한 시간에 여행지를 골라두면, 하나라도 겹치는 순간 자동으로 확정되는 서비스, Matchip.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#hero" class="logo">
+      <span class="logo-mark" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <circle cx="14" cy="14" r="13" fill="var(--blue-primary)"/>
+          <path d="M9 15.5C9 12 11.2 9 14 9C16.8 9 19 12 19 15.5C19 17 17.5 19 14 19C10.5 19 9 17 9 15.5Z" fill="var(--orange-point)"/>
+        </svg>
+      </span>
+      Matchip
+    </a>
+    <a href="room-join.html" class="header-link">코드로 입장하기</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- 1. 히어로 -->
+  <section class="hero" id="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Match + Trip</p>
+        <h1>다 같이 안 모여도 돼.<br>각자 <span class="hl">콕</span> 찍으면,<br>겹치는 곳으로 떠나요</h1>
+        <p class="hero-sub">방 만들고 코드만 공유하세요. 친구들이 각자 편한 시간에 들어와 여행지를 고르고, 하나라도 겹치면 자동으로 확정돼요.</p>
+        <div class="cta-group">
+          <a href="room-create.html" class="btn btn-primary">방 만들기</a>
+          <a href="room-join.html" class="btn btn-outline">코드로 입장하기</a>
+        </div>
+      </div>
+      <div class="hero-art reveal" aria-hidden="true">
+        <svg viewBox="0 0 360 360" width="100%" height="100%">
+          <circle cx="180" cy="180" r="150" fill="var(--blue-primary)" opacity="0.16"/>
+          <circle cx="180" cy="180" r="110" fill="var(--blue-primary)" opacity="0.22"/>
+
+          <!-- map pin -->
+          <g transform="translate(56,54) rotate(-8 60 60)">
+            <path d="M60 4C36 4 18 22 18 46C18 78 60 118 60 118C60 118 102 78 102 46C102 22 84 4 60 4Z" fill="var(--blue-deep)"/>
+            <circle cx="60" cy="46" r="20" fill="var(--neutral-light)"/>
+            <circle cx="60" cy="46" r="9" fill="var(--orange-point)"/>
+          </g>
+
+          <!-- suitcase -->
+          <g transform="translate(150,150)">
+            <rect x="0" y="34" width="140" height="106" rx="18" fill="var(--orange-point)"/>
+            <rect x="0" y="34" width="140" height="106" rx="18" fill="black" opacity="0.04"/>
+            <rect x="42" y="8" width="56" height="34" rx="12" fill="none" stroke="var(--blue-deep)" stroke-width="8"/>
+            <rect x="16" y="60" width="108" height="10" rx="5" fill="var(--neutral-light)" opacity="0.85"/>
+            <rect x="16" y="82" width="108" height="10" rx="5" fill="var(--neutral-light)" opacity="0.85"/>
+            <rect x="16" y="104" width="70" height="10" rx="5" fill="var(--neutral-light)" opacity="0.85"/>
+          </g>
+
+          <!-- sparkles -->
+          <g fill="var(--blue-deep)">
+            <path d="M296 96l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/>
+            <path d="M50 250l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 문제 공감 -->
+  <section class="empathy" id="empathy">
+    <div class="wrap">
+      <h2 class="reveal">여행 가고 싶은데,<br>단톡방에서 늘 이러지 않나요?</h2>
+      <div class="chat-stack reveal">
+        <div class="bubble bubble-left">
+          <span class="bubble-name">지수</span>
+          <p>이번 주말 어때?</p>
+        </div>
+        <div class="bubble bubble-right">
+          <span class="bubble-name">민호</span>
+          <p>나 바빠서 담주가 나을 듯...</p>
+        </div>
+        <div class="bubble bubble-left">
+          <span class="bubble-name">채영</span>
+          <p>그럼 다음 달은?</p>
+        </div>
+        <div class="bubble bubble-fade">
+          <p>...(3주째 대화 없음)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 작동 방식 -->
+  <section class="how" id="how">
+    <div class="wrap">
+      <h2 class="reveal">이렇게 진행돼요</h2>
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step-no">01</span>
+          <span class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" width="40" height="40">
+              <circle cx="24" cy="24" r="22" fill="var(--bg-tint)"/>
+              <rect x="12" y="16" width="24" height="17" rx="6" fill="var(--blue-primary)"/>
+              <path d="M12 22l12 8 12-8" stroke="var(--neutral-light)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <h3>방 만들고<br>코드 공유</h3>
+          <p>방 이름과 인원 수만 정하면 6자리 코드가 발급돼요. 카톡으로 톡 던져두기만 하면 끝.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-no">02</span>
+          <span class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" width="40" height="40">
+              <circle cx="24" cy="24" r="22" fill="var(--bg-tint)"/>
+              <path d="M24 12c-6 0-10 4.6-10 10 0 7 10 15 10 15s10-8 10-15c0-5.4-4-10-10-10Z" fill="var(--blue-primary)"/>
+              <circle cx="24" cy="22" r="4" fill="var(--neutral-light)"/>
+            </svg>
+          </span>
+          <h3>각자 편할 때<br>여행지 콕콕</h3>
+          <p>실시간으로 안 모여도 괜찮아요. 각자 들어와 원하는 지역을 지도에서 골라두면 돼요.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-no">03</span>
+          <span class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" width="40" height="40">
+              <circle cx="24" cy="24" r="22" fill="var(--bg-tint)"/>
+              <path d="M24 11l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="var(--orange-point)"/>
+              <path d="M35 14l1.4 3 3 1.4-3 1.4-1.4 3-1.4-3-3-1.4 3-1.4z" fill="var(--orange-point)"/>
+            </svg>
+          </span>
+          <h3>겹치면<br>자동 확정!</h3>
+          <p>전원 선택이 끝나는 순간 겹치는 지역을 찾아 바로 확정하고 알려드려요.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 4. 핵심 매력 포인트 -->
+  <section class="features" id="features">
+    <div class="wrap">
+      <h2 class="reveal">Matchip이 다른 이유</h2>
+      <div class="feature-grid">
+        <div class="feature-card reveal">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40" width="32" height="32">
+              <rect x="4" y="10" width="32" height="20" rx="6" fill="var(--orange-point)"/>
+              <circle cx="20" cy="20" r="6" fill="var(--neutral-light)"/>
+              <rect x="4" y="10" width="32" height="20" rx="6" fill="none" stroke="var(--orange-point)" stroke-width="2"/>
+            </svg>
+          </span>
+          <h3>회원가입 없이<br>코드만으로 시작</h3>
+          <p>가입도, 비밀번호도 없어요. 방 코드와 닉네임이면 충분해요.</p>
+        </div>
+        <div class="feature-card reveal">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40" width="32" height="32">
+              <circle cx="20" cy="20" r="16" fill="var(--orange-point)"/>
+              <path d="M20 11v9l7 4" stroke="var(--neutral-light)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <h3>실시간으로<br>안 모여도 OK</h3>
+          <p>비동기로 진행돼서, 각자 자기 시간에 들어와 선택하면 그만이에요.</p>
+        </div>
+        <div class="feature-card reveal">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40" width="32" height="32">
+              <path d="M20 6c-7 0-12 5.4-12 12 0 9 12 16 12 16s12-7 12-16c0-6.6-5-12-12-12Z" fill="var(--orange-point)"/>
+              <circle cx="20" cy="18" r="4.5" fill="var(--neutral-light)"/>
+            </svg>
+          </span>
+          <h3>추천 루트<br>지도로 미리보기</h3>
+          <p>카카오맵 위에서 지역을 클릭하면 추천 루트를 바로 확인할 수 있어요.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 마무리 CTA -->
+  <section class="final-cta" id="start">
+    <div class="wrap reveal">
+      <h2>친구들 불러서<br>지금 시작해봐요</h2>
+      <a href="room-create.html" class="btn btn-primary btn-lg">방 만들기</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- 6. 푸터 -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span class="logo-sm">Matchip</span>
+    <p>Match + Trip · 개인 프로젝트 (포트폴리오용)</p>
+    <p>&copy; 2026 Matchip</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
