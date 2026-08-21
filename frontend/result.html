@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>여행지 확정 — Matchip</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <circle cx="14" cy="14" r="13" fill="var(--blue-primary)"/>
+          <path d="M9 15.5C9 12 11.2 9 14 9C16.8 9 19 12 19 15.5C19 17 17.5 19 14 19C10.5 19 9 17 9 15.5Z" fill="var(--orange-point)"/>
+        </svg>
+      </span>
+      Matchip
+    </a>
+    <span id="header-room-code" class="header-code" hidden></span>
+  </div>
+</header>
+
+<main>
+  <section class="form-section">
+    <div class="wrap wrap-narrow">
+      <div class="result-hero">
+        <p class="eyebrow">여행지 확정</p>
+        <h1 id="result-title" class="reveal in-view">불러오는 중...</h1>
+        <span id="result-room-name" class="room-progress"></span>
+      </div>
+
+      <div class="route-card">
+        <h3>추천 루트</h3>
+        <p id="result-route"></p>
+      </div>
+
+      <div class="room-actions">
+        <a href="index.html" class="btn btn-outline btn-block">홈으로 돌아가기</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/result.js"></script>
+</body>
+</html>

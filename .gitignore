@@ -1,1 +1,9 @@
 .claude/
+.env
+__pycache__/
+*.pyc
+matchip.db
+.venv/
+.vercel
+.env
+.env.local

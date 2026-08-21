@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>코드로 입장하기 — Matchip</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <circle cx="14" cy="14" r="13" fill="var(--blue-primary)"/>
+          <path d="M9 15.5C9 12 11.2 9 14 9C16.8 9 19 12 19 15.5C19 17 17.5 19 14 19C10.5 19 9 17 9 15.5Z" fill="var(--orange-point)"/>
+        </svg>
+      </span>
+      Matchip
+    </a>
+    <a href="room-create.html" class="header-link">방 만들기</a>
+  </div>
+</header>
+
+<main>
+  <section class="form-section">
+    <div class="wrap wrap-narrow">
+      <p class="eyebrow">코드로 입장하기</p>
+      <h1 class="form-title">코드와 닉네임으로<br><span class="hl">바로</span> 들어가요</h1>
+      <p class="form-desc">친구가 공유한 6자리 코드를 입력하고 닉네임을 정해주세요. 다시 들어올 땐 같은 코드+닉네임이면 돼요.</p>
+
+      <form id="join-form" class="card-form">
+        <label class="field">
+          <span class="field-label">방 코드</span>
+          <input type="text" id="join-code" placeholder="A3F9K2" maxlength="6" autocomplete="off" required>
+        </label>
+        <label class="field">
+          <span class="field-label">닉네임</span>
+          <input type="text" id="join-nickname" placeholder="예: 지수" maxlength="12" required>
+        </label>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">입장하기</button>
+      </form>
+
+      <p id="join-error" class="form-error" hidden></p>
+    </div>
+  </section>
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/room-join.js"></script>
+</body>
+</html>

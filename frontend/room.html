@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>방 — Matchip</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <circle cx="14" cy="14" r="13" fill="var(--blue-primary)"/>
+          <path d="M9 15.5C9 12 11.2 9 14 9C16.8 9 19 12 19 15.5C19 17 17.5 19 14 19C10.5 19 9 17 9 15.5Z" fill="var(--orange-point)"/>
+        </svg>
+      </span>
+      Matchip
+    </a>
+    <span id="header-room-code" class="header-code" hidden></span>
+  </div>
+</header>
+
+<main>
+  <section class="form-section">
+    <div class="wrap wrap-narrow">
+      <div class="room-header">
+        <h1 id="room-title" class="room-title">방 불러오는 중...</h1>
+        <span id="room-progress" class="room-progress">-/-명 참여</span>
+      </div>
+
+      <ul id="participant-list" class="participant-list"></ul>
+
+      <p id="room-status-msg" class="status-msg" hidden></p>
+
+      <div class="room-actions">
+        <a id="go-select" href="#" class="btn btn-primary btn-lg btn-block">여행지 선택하러 가기</a>
+        <button id="close-room-btn" type="button" class="btn btn-outline btn-block" hidden>지금 강제 마감하기</button>
+        <button id="delete-room-btn" type="button" class="btn btn-outline btn-block" hidden>방 삭제하기</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/room.js"></script>
+</body>
+</html>

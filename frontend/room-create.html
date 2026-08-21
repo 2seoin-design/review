@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>방 만들기 — Matchip</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <circle cx="14" cy="14" r="13" fill="var(--blue-primary)"/>
+          <path d="M9 15.5C9 12 11.2 9 14 9C16.8 9 19 12 19 15.5C19 17 17.5 19 14 19C10.5 19 9 17 9 15.5Z" fill="var(--orange-point)"/>
+        </svg>
+      </span>
+      Matchip
+    </a>
+    <a href="room-join.html" class="header-link">코드로 입장하기</a>
+  </div>
+</header>
+
+<main>
+  <section class="form-section">
+    <div class="wrap wrap-narrow">
+      <p class="eyebrow">방 만들기</p>
+      <h1 class="form-title">여행 갈 <span class="hl">방</span>을<br>만들어볼까요?</h1>
+      <p class="form-desc">방 이름과 인원 수만 정하면, 친구들에게 공유할 6자리 코드가 바로 나와요.</p>
+
+      <form id="create-form" class="card-form">
+        <label class="field">
+          <span class="field-label">방 이름</span>
+          <input type="text" id="room-name" placeholder="예: 우리 여름휴가 어디가지" maxlength="30" required>
+        </label>
+        <label class="field">
+          <span class="field-label">참여 인원 수</span>
+          <input type="number" id="room-capacity" min="2" max="20" value="4" required>
+          <span class="field-hint">방 생성 후에는 인원 수를 수정할 수 없어요.</span>
+        </label>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">방 만들기</button>
+      </form>
+
+      <div id="create-result" class="result-card" hidden>
+        <p class="result-label">방 코드가 발급됐어요!</p>
+        <p id="room-code" class="result-code"></p>
+        <p class="result-hint">이 코드를 친구들에게 공유하고, 아래 버튼으로 먼저 닉네임을 정해 입장해보세요.</p>
+        <a id="go-join" href="#" class="btn btn-primary btn-lg btn-block">닉네임 정하고 입장하기</a>
+      </div>
+
+      <p id="create-error" class="form-error" hidden></p>
+    </div>
+  </section>
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/room-create.js"></script>
+</body>
+</html>
