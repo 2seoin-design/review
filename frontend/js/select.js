@@ -28,8 +28,8 @@ const els = {
 window.__selectRegion = toggleRegion;
 
 async function init() {
-  const [{ room }, { regions }] = await Promise.all([
-    apiFetch(`/rooms/${code}`),
+  const [{ room, already_submitted }, { regions }] = await Promise.all([
+    apiFetch(`/rooms/${code}?participant_id=${session.participantId}`),
     apiFetch('/regions'),
   ]);
   state.room = room;
@@ -39,6 +39,11 @@ async function init() {
   if (room.status === 'failed') { location.href = `room.html?code=${code}`; return; }
 
   renderRoundInfo();
+  if (already_submitted) {
+    state.submittedRound = room.round;
+    enterWaiting();
+    return;
+  }
   renderCards();
   loadNaverMap();
 }

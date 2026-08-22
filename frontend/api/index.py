@@ -163,12 +163,23 @@ def join_room(code: str, body: JoinBody):
 
 
 @app.get("/api/rooms/{code}")
-def get_room(code: str):
+def get_room(code: str, participant_id: str | None = None):
     room = _get_room_or_404(code)
     participants = (
         sb.table("participants").select("*").eq("room_id", room["id"]).order("join_order").execute().data
     )
-    return {"room": room, "participants": participants}
+    already_submitted = False
+    if participant_id:
+        rows = (
+            sb.table("selections")
+            .select("id")
+            .eq("participant_id", participant_id)
+            .eq("round", room["round"])
+            .execute()
+            .data
+        )
+        already_submitted = bool(rows)
+    return {"room": room, "participants": participants, "already_submitted": already_submitted}
 
 
 @app.get("/api/regions")
