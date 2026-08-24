@@ -18,11 +18,14 @@ function sessionKey(code) {
 }
 
 function saveSession(code, session) {
-  localStorage.setItem(sessionKey(code), JSON.stringify(session));
+  // sessionStorage(탭 단위)를 씀: localStorage(오리진 전체 공유)였으면 같은 브라우저의
+  // 다른 탭에서 같은 방 코드로 다른 참여자가 들어올 때 같은 키(matchip:CODE)를 덮어써서
+  // 지역 선택이 안 되는 문제가 있었음.
+  sessionStorage.setItem(sessionKey(code), JSON.stringify(session));
 }
 
 function loadSession(code) {
-  const raw = localStorage.getItem(sessionKey(code));
+  const raw = sessionStorage.getItem(sessionKey(code));
   return raw ? JSON.parse(raw) : null;
 }
 
