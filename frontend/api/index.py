@@ -23,6 +23,7 @@ MAX_ROUNDS = 4  # 최초 1회 + 재선택 최대 3회 (PRD §3, §6)
 CONFIRMED_TTL_DAYS = 5  # 확정 후 5일 뒤 자동 삭제 (PRD §6 방 생명주기)
 
 sb = create_client(os.environ["SUPABASE_URL"], os.environ["SUPABASE_SERVICE_ROLE_KEY"])
+
 app = FastAPI()
 # vercel.json이 /api/* 를 이 함수 하나로 rewrite하므로 배포에서는 항상 same-origin이라
 # 실제로는 안 쓰이지만, `vercel dev` 없이 프론트를 다른 포트로 로컬 실행할 때를 위해 켜둔다.
