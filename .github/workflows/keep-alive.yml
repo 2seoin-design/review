@@ -11,9 +11,13 @@ jobs:
     steps:
       - name: Query one row to keep Supabase project active
         run: |
-          curl -sf "${SUPABASE_URL}/rest/v1/regions?select=id&limit=1" \
+          http_code=$(curl -s -o response.txt -w "%{http_code}" \
+            "${SUPABASE_URL}/rest/v1/regions?select=id&limit=1" \
             -H "apikey: ${SUPABASE_ANON_KEY}" \
-            -H "Authorization: Bearer ${SUPABASE_ANON_KEY}"
+            -H "Authorization: Bearer ${SUPABASE_ANON_KEY}")
+          echo "HTTP status: $http_code"
+          cat response.txt
+          if [ "$http_code" -ge 400 ]; then exit 1; fi
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}

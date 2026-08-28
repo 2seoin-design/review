@@ -69,3 +69,6 @@ alter table regions enable row level security;
 alter table rooms enable row level security;
 alter table participants enable row level security;
 alter table selections enable row level security;
+
+-- regions만 예외: 여행지 목록은 원래 공개 데이터라 anon 읽기 허용 (GitHub Actions keep-alive가 이 권한으로 조회)
+create policy "regions are publicly readable" on regions for select using (true);
